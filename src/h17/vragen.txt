@@ -1,0 +1,12 @@
+vragen 17.10
+1) Wat is een exceptie?
+	Een exceptie is een alternatieve programma loop als er iets fout gaat. Met als doel om fouten
+	op te vangen zodat de normale programma loop kan worden hervat.
+2) Een exceptie kan van elke type zijn dus ook van klassen. Daarmee kan er bij een exceptie een
+	object gestuurd worden naar de programa gedeelte die de exceptie afhandeld.
+3) Om alle exceptie op te vangen moet je tussen de haakjes van catch drie puntjes hebben.
+	catch(...) {} Die ... noemen ook wel ellips
+4) Om met catch alle excepties van de standaard bibliotheek op te vangen moet je exception& tussen
+	de haakjes zetten. dus catch(exception&) {}
+5) Je kunt aangeven dat een functie een int exceptie kan opwerpen met de volgende notatie:
+	<type> <func-naam>(<arg>) throw(int) { <func-body> }

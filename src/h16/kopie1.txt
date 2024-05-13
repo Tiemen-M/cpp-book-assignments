@@ -1,0 +1,4 @@
+Een letter en twee getallen:
+A
+23
+1.4142

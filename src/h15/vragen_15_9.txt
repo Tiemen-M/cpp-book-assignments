@@ -1,0 +1,20 @@
+1) Wat is het verschil tussen een virtuele functie en polymorfisme?
+	Polymorfisme betekent veelvormigheid en is een één van de basis eigenschappen van een
+		object georiënteerde progragmeertaal. Waarbij verschilende types die samen een gedeelde
+		basis klasse hebben in één array of container kan worden gestopt.
+	En c++ implementeert polymorfisme door onder andere met virtuele functies die het mogelijk
+		maakt dat ieder type zijn eigen overridden functie gebruikt inplaats van de bassis klasse.
+		En dit is de manier om abstracte klassen te maken.
+2) Wat is de verschil tussen late en vroege binding?
+	Het verschil is dat bij late binding tijdens run-time wordt bepaald welke functie variant
+		wordt aangeroepen. En bij vroege binding wordt dit al bepaald tijdens compile-time.
+3) Wat is een zuiver virtuele functie?
+	Dat is een virtuele functie definitie zonder functie body. Een voorbeeld zou kunnen zijn:
+		class Persoon {
+		public:
+			virtual void print() const = 0;
+		}
+4) Wat is de zin van een abstracte klasse?
+	Het doel van een abstracte klasse is om te voorkomen dat er een object van de abstarcte klasse
+		gemaakt kan worden terwijl dat dit niet logisch is. Om een abstracte klasse te maken moet
+		tenminste 1 zuivere virtuele functie in de klasse definiëren.

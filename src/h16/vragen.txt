@@ -1,0 +1,46 @@
+1) Als ik de invoerbestandsnaam verander in een niets bestaand bestand in vb8.cpp zal de de fail
+	vlag gezet worden waardoor de programa wordt afgebroken door de if constructie die dat checkt
+	en geeft een fout bericht terug.
+		gecheckt door op regel 17 "ifstream invoer(filename.c_str());" te vervangen door
+		"ifstream invoer("xxx.3" /*filename.c_str()*/);"
+2) De broncode van vb8.cpp Checkt de eerste regel van bestand3.txt of het een integer getal is 
+	anders geeft hij een foutmedling. Daarna leest hij elke volgende regel wat als een integer
+	getal kan worden ingelezen. Als het einde van het bestand of iets wat geen integer getal is
+	stopt het programma met lezen van het bestand en zet het op scherm.
+3) Zie vr3.cpp voor broncode die het alfabet naar alfabet.txt schrijft.
+4) Zie vr4.cpp voor broncode die van alfabet.txt leest
+	Ik dacht dat abc.seekg(-1,ios::end); abc >> ch; de letter Z zou in lezen, maar ik was vergeten
+	dat ik een newline aan het einde van het bestand had toegevoegd. En omdat die uit twee bytes
+	bestaat werd er een G gelezen.
+5) Streams zijn objecten die gebruikt worden voor Input en Output operaties. Waarde de operator >>
+	en << zijn overladen en een interne buffer hebben met een get- en of een putpointer.
+6) Er is gekozen voor de operator<< voor uitvoer omdat het een beetje op een pijl lijkt die gegevens
+	naar de output object laat wijzen. En de operator>> voor input omdat het lijkt op een pijl die
+	gegevens van de input stream naar buiten wijst naar het variable of object waar het naar toe
+	moet.
+	cout << "Gaat naar scherm";
+	cin >> ontvang_data_van_toetsenbord;
+7) cin is een object van de klasse istream
+8) Ik ken de volgende stream klassen:
+	fstream, ifstream, ofstream, iostream, sstream, istream, ostream, ios
+9) Er zijn een aantal manieren waarop je een stream kan testen:
+	- Op basis van de verschilende flaggen zoals .good(), .bad(), .eof() en .fail()
+	- Op basis van integer waarde van object: if(!obj) {}
+10) In broncode vb10.cpp zijn de operator<< en operator>> als friend gedelareerd omdat de linker
+	argument niet de object zelf moet zijn daarom voldoet een normale lid functie niet. Je zou het
+	ook als globale functies kunnen worden gedeclareerd maar dan moet je ook getter en setter
+	lid functies declareren anders kunnen de operators niet bij de gegevens in het object.
+11) Als je zowel uit het bestand c:\data\data10.txt wil lezen als schrijven dan moet je het volgende
+	schrijven:
+		#include <fstream>
+		using namespace std;
+		...
+		fstream bestand("c:\\data\\data10.txt", ios::nocreate | ios::in | ios::out);
+12) Het verschil tussen binairbestand en een tekstbestand, is dat een teksbestand is die je als
+	mens ook kan lezen. En binaire bestanden zijn meestal niet te lezen voor mensen maar zijn
+	vooral bedoeld om gelezen en beschreven te worden door andere programma's.
+13) De operator<< van voorbeeld 16.10 geeft een referentie van ostream zodat het gebruikt
+	kan worden in een ketting.
+14) In c++ kun je een bestand het snelst kopieëren door in blokken te kopieëren. Gebruik niet
+	de .get() en .put() lidfuncties omdat daar mee alleen byte voor byte kopieëert 
+	maar gebruik .read(), .write() of .rdbuf(). Omdat die in blokken kopieëert.
